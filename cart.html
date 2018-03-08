@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <title>CART</title>        
+        <link rel="stylesheet" href="css/raw/cool.css">    
+        <link rel="stylesheet" href="css/raw/styles.css">    
+        <link rel="stylesheet" href="css/global/animate.css">    
+        <script src="js/raw/jqueryraw.js"></script>
+        <script src="js/raw/angularaw.js"></script>
+        <script src="js/global/fontawsome.js"></script>
+    </head>
+    
+<body>
+    
+    <div class="loading">
+        <div class="titleloading"> Loading....</div>
+        
+    </div>
+    <div ng-app="NgList" ng-controller="ngCtrl">
+        <div class="navbar">    
+            <i class="fas fa-arrow-left fa-2x"></i>
+            <div class="title">Cart</div>
+        </div>  
+    <div class="row" ng-controller="ngCtrl">
+        <div class="col col-lg-12 col-md-6 col-sm-4"  ng-repeat="x in data" >
+            {{x.name}}
+        <div class="img-container">
+            <img class="img-thumbnail" src="{{x.img}}">            
+            {{x.price | currency }}
+        </div> 
+        <div class="action-icons">
+            <i class="fas fa-plus" data-quantity="{{x.quantity}}" data-availability="{{x.availability}}" ng-click="add($index)"></i>
+            <div class="label-quant">{{x.quantity}}</div>
+            <i class="fas fa-minus" ng-click="remove($index)"></i>
+        </div>    
+            <i class="fas fa-trash-alt fa-3x" ng-click="trash($index)"></i>
+        </div>    
+    <div class="footnavbar">
+        <div class="check">
+          {{GetTototal() | currency}}
+        </div>   
+    </div>    
+    
+        
+    
+    </div>
+    
+<script src="js/raw/controller.js"></script>
+<script src="js/raw/js.js"></script> 
+ 
+</body>
+</html>    
